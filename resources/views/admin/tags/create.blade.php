@@ -1,0 +1,52 @@
+@extends('adminlte::page')
+
+@section('title', 'Blog-Laravel')
+
+@section('content_header')
+    <span>&nbsp;<i class="fas fa-home"></i>/&nbsp;Etiquetas/&nbsp;crear</span>
+@stop
+
+@section('content')
+    @if (session('info'))
+        <div class="alert alert-success">
+            <strong>{{session('info')}}</strong>
+        </div>
+    @endif
+    <div class="card">
+        <div class="card-header bg-secondary">
+            <h4>Nueva Etiqueta</h4>
+        </div>
+        <div class="card-body">
+
+            {!! Form::open(['route' => 'admin.tags.store']) !!}
+
+                @include('admin.tags.partials.form')
+
+                {!! Form::submit('Crear Etiqueta', ['class' => 'btn btn-primary']) !!}
+            {!! Form::close() !!}
+
+        </div>
+    </div>
+@stop
+
+@section('js')
+    <script src={{ asset('vendor/jQuery-Plugin-stringToSlug-1.3/jquery.stringToSlug.min.js') }}></script>
+
+    <script>
+        $(document).ready( function() {
+            $("#name").stringToSlug({
+                setEvents: 'keyup keydown blur',
+                getPut: '#slug',
+                space: '-'
+            });
+        });
+    </script>
+@endsection
+
+@section('css')
+    <style>
+        .sidebar-dark-primary{
+            background: #455279 !important;
+        }
+    </style>
+@stop

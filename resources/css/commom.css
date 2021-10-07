@@ -1,0 +1,27 @@
+.container{
+    @apply max-w-7xl mx-auto px-2
+}
+
+@media(min-width:640px){
+    .container{
+        @apply px-6;
+    }
+}
+
+@media(min-width:1024px){
+    .container{
+        @apply px-8;
+    }
+}
+
+.title{
+    @apply text-center text-blue-emi text-4xl font-mono font-black ml-auto mr-auto py-6;
+}
+
+.footer-title{
+    @apply font-bold leading-6 text-yellow-400 hover:text-gray-500 uppercase pb-2;
+}
+
+.footer-li{
+    @apply text-gray-100 text-xs font-bold;
+}
